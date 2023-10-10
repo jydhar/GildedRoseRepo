@@ -9,19 +9,50 @@ class GildedRoseTest {
 
 
     @Test
-    void dexterityVest() {
-        Item[] items = new Item[] { new Item("+5 Dexterity Vest", 10, 20) };
+    public void testBackStagePasses_updateQualityTestCases() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20) };
         GildedRose app = new GildedRose(items);
+
         app.updateQuality();
-        assertEquals("+5 Dexterity Vest", app.items[0].name);
+
+        assertItemEquals(app.getItems()[0], new Item("Backstage passes to a TAFKAL80ETC concert", 14, 21));
     }
 
     @Test
-    void agedBrie() {
-        Item[] items = new Item[] {new Item("Aged Brie", 2, 0) };
+    public void testAgedBrie_updateQualityTestCases() {
+        Item[] items = new Item[] { new Item("Aged Brie", 15, 20) };
         GildedRose app = new GildedRose(items);
+
         app.updateQuality();
-        assertEquals("Aged Brie", app.items[0].name);
+
+        assertItemEquals(app.getItems()[0], new Item("Aged Brie", 14, 21));
+    }
+
+    @Test
+    public void testSulfuras_Hand_Of_Ragnaros_updateQualityTestCases() {
+        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 100, 100) };
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        assertItemEquals(app.getItems()[0], new Item("Sulfuras, Hand of Ragnaros", 100, 100));
+    }
+
+    @Test
+    public void testConjured_Mana_Cake_updateQualityTestCases() {
+        Item[] items = new Item[] { new Item("Conjured Mana Cake", 3, 6) };
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        assertItemEquals(app.getItems()[0], new Item("Conjured Mana Cake", 2, 4));
+    }
+
+
+    public static void assertItemEquals(Item input, Item expected) {
+        assertEquals(expected.name, input.name);
+        assertEquals(expected.quality, input.quality);
+        assertEquals(expected.sellIn, input.sellIn);
     }
 
 }
