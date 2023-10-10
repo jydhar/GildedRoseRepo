@@ -7,10 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GildedRoseTest {
 
 
-
     @Test
     public void testBackStagePasses_updateQualityTestCases() {
-        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20) };
+        Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20)};
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -20,7 +19,7 @@ class GildedRoseTest {
 
     @Test
     public void testAgedBrie_updateQualityTestCases() {
-        Item[] items = new Item[] { new Item("Aged Brie", 15, 20) };
+        Item[] items = new Item[]{new Item("Aged Brie", 15, 20)};
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -30,7 +29,7 @@ class GildedRoseTest {
 
     @Test
     public void testSulfuras_Hand_Of_Ragnaros_updateQualityTestCases() {
-        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 100, 100) };
+        Item[] items = new Item[]{new Item("Sulfuras, Hand of Ragnaros", 100, 100)};
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -40,7 +39,7 @@ class GildedRoseTest {
 
     @Test
     public void testConjured_Mana_Cake_updateQualityTestCases() {
-        Item[] items = new Item[] { new Item("Conjured Mana Cake", 3, 6) };
+        Item[] items = new Item[]{new Item("Conjured Mana Cake", 3, 6)};
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();

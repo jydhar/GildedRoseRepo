@@ -20,22 +20,23 @@ class GildedRose {
     }
 
     private void updateEachItemQuality(Item item) {
+        int downRate = item.name.equals(ItemType.CONJURED_MANA_CAKE.getName())? -2 : -1;
         if (!item.name.equals(ItemType.AGED_BRIE.getName())
                 && !item.name.equals(ItemType.BACKSTAGE_PASSES_TAFKAL80ETC_CONCERT.getName())) {
             if (!item.name.equals(ItemType.SULFURAS_HAND_RAGNAROS.getName())) {
-                updateQualityCounter(item, -1);
+                updateQualityCounter(item, downRate);
             }
         } else {
             updateQualityCounter(item, 1);
 
             if (item.name.equals(ItemType.BACKSTAGE_PASSES_TAFKAL80ETC_CONCERT.getName())) {
-                if (item.sellIn < 11) {
+                if (item.sellIn < 11 || item.sellIn < 6) {
                     updateQualityCounter(item, 1);
                 }
 
-                if (item.sellIn < 6) {
+               /* if (item.sellIn < 6) {
                     updateQualityCounter(item, 1);
-                }
+                }*/
             }
         }
 
@@ -47,7 +48,7 @@ class GildedRose {
             if (!item.name.equals(ItemType.AGED_BRIE.getName())) {
                 if (!item.name.equals(ItemType.BACKSTAGE_PASSES_TAFKAL80ETC_CONCERT.getName())) {
                     if (!item.name.equals(ItemType.SULFURAS_HAND_RAGNAROS.getName())) {
-                        updateQualityCounter(item, -1);
+                        updateQualityCounter(item, downRate);
                     }
                 } else {
                     item.quality = item.quality - item.quality;
