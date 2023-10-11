@@ -29,12 +29,12 @@ class GildedRoseTest {
 
     @Test
     public void testSulfuras_Hand_Of_Ragnaros_updateQualityTestCases() {
-        Item[] items = new Item[]{new Item("Sulfuras, Hand of Ragnaros", 100, 100)};
+        Item[] items = new Item[]{new Item("Sulfuras, Hand of Ragnaros", 1, 80)};
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
 
-        assertItemEquals(app.getItems()[0], new Item("Sulfuras, Hand of Ragnaros", 100, 100));
+        assertItemEquals(app.getItems()[0], new Item("Sulfuras, Hand of Ragnaros", 1, 80));
     }
 
     @Test
