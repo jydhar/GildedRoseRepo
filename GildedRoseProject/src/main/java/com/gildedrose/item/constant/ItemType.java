@@ -1,5 +1,9 @@
 package com.gildedrose.item.constant;
 
+import com.gildedrose.item.Item;
+
+import java.util.Arrays;
+
 public enum ItemType {
     AGED_BRIE,
     SULFURAS_HAND_RAGNAROS,
@@ -7,13 +11,7 @@ public enum ItemType {
     CONJURED_MANA_CAKE;
 
 
-/*    private String name;
-
-    private ItemType(String name) {
-        this.name = name;
+    public static boolean isItemExist(Item item) {
+        return Arrays.asList(ItemType.values()).contains(item.name);
     }
-
-    public String getName() {
-        return name;
-    }*/
 }

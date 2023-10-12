@@ -1,14 +1,13 @@
 package com.gildedrose.item;
 
-public class ConjuredItem implements BaseItem{
-    private Item item;
+public class ConjuredItem extends RandomItem {
 
     public ConjuredItem(Item item) {
-        this.item = item;
+        super(item);
     }
 
     @Override
-    public void updateQuality() {
-        item.quality = 2;
+    public int reduceValueOverZeroDaysToSell() {
+        return 2;
     }
 }

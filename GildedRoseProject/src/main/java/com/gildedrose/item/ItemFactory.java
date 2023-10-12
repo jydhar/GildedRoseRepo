@@ -2,6 +2,7 @@ package com.gildedrose.item;
 
 import com.gildedrose.item.constant.ItemType;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,6 +16,9 @@ public class ItemFactory {
         itemBucketList.put(ItemType.CONJURED_MANA_CAKE, new ConjuredItem(item));
     }
     public BaseItem customiseItem(Item item) {
+        if(!ItemType.isItemExist(item)){
+            return new RandomItem(item);
+        }
         return itemBucketList.get(Enum.valueOf(ItemType.class,item.name));
     }
 }

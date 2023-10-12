@@ -11,6 +11,14 @@ import static org.junit.Assert.assertEquals;
 public class GildedRoseTest {
 
     @Test
+    public void standardItemDecreasesSellByDayNumberEachTime() {
+        GildedRose app = newGildedRose("standard item", 0, 0);
+
+        app.updateQuality();
+
+        assertEquals(-1, app.items[0].sellIn);
+    }
+    @Test
     public void brieDecreasesSellByDayNumberEachTime() {
         GildedRose app = newGildedRose(ItemType.AGED_BRIE.name(), 0, 0);
 
@@ -34,7 +42,7 @@ public class GildedRoseTest {
 
         app.updateQuality();
 
-        assertEquals(0, app.items[0].sellIn);
+        assertEquals(-1, app.items[0].sellIn);
     }
 
     private GildedRose newGildedRose(String itemName, int itemSellIn, int itemQuality) {
