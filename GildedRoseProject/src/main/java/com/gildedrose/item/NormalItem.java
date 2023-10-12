@@ -1,10 +1,10 @@
 package com.gildedrose.item;
 
-public class RandomItem implements BaseItem {
+public class NormalItem implements BaseItem {
 
     private final Item item;
 
-    public RandomItem(Item item) {
+    public NormalItem(Item item) {
         this.item = item;
     }
 

@@ -28,7 +28,7 @@ public class GildedRose {
     }
 
     public static int highestValuePossible(Item item) {
-        if (item.name.equals(ItemType.SULFURAS_HAND_RAGNAROS)) {
+        if (item.name.equals(ItemType.SULFURAS_HAND_RAGNAROS.name())) {
             return 80;
         }
         return 50;

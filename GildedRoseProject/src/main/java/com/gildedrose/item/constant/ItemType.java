@@ -12,6 +12,11 @@ public enum ItemType {
 
 
     public static boolean isItemExist(Item item) {
-        return Arrays.asList(ItemType.values()).contains(item.name);
+        try {
+            return Arrays.asList(ItemType.values()).contains(Enum.valueOf(ItemType.class,item.name));
+        }catch (Exception e){
+            return false;
+        }
+
     }
 }
